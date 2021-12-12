@@ -67,9 +67,11 @@ static const struct arg args[] = {
 	/* function format          argument */
         {netspeed_rx,       "↓ %s|"     ,    "wlo1"  },
         {netspeed_tx,       "↑ %s|"     ,    "wlo1"  },
+	{run_command,       "%s|"       ,    "sensors | awk '/^Package/ {print $4}'"},
         {cpu_perc,          " %s%|"    ,    NULL    },
 	{run_command,       " %s|"     ,    "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
 	{ram_used,          " %s|"     ,    NULL    },
-	{battery_perc,      " %s%|"    ,    "BAT1"  },
+	{battery_perc,      " %s|"     ,    "BAT1"  },
+	{battery_remaining, "%s|"      ,    "BAT1"  },
 	{datetime,          "%s|"       ,   "%F %T"  },
 };
